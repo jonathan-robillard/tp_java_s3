@@ -6,11 +6,19 @@ public class ApplicationErrorLog extends AbstractApplicationLog {
 	public ApplicationErrorLog() {
 		super();
 	}
-	
+
 	@Override
 	public void setMessage(String message) {
 		this.message = message;
 		super.fireMessage("[ERROR]", this.message);
+	}
+
+	public IApplicationLogListener[] getpplicationLogListeners() {
+        return listeners;
+    }
+
+	void setMessage() {
+		newMessage( level, message );
 	}
 
 
