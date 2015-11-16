@@ -6,8 +6,8 @@ public class ApplicationWarningMessageDialog extends
 		AbstractApplicationMessageDialog {
 
 	@Override
-	protected void showMessage(String level, String message) {
-		System.out.println("Attention,...")
+	protected void showMessage() {
+		System.out.println("Attention,...");
 	}
 
 }

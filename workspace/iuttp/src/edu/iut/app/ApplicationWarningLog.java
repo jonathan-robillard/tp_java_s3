@@ -11,10 +11,15 @@ public class ApplicationWarningLog extends AbstractApplicationLog {
 	public void setMessage(String message) {
 		this.message = message;
 		super.fireMessage("[WARNING]", this.message);
-        
-        for(int i=0; i<listeners.size(); i++)
-        {
-            listeners.get(i).newMessage("String level", message);
-        }
+		for (IApplicationLogListener listener_i : listeners) {
+			listener_i.newMessage(message);
+		}
 	}
+
+	@Override
+	public IApplicationLogListener[] getpplicationLogListeners() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
