@@ -14,17 +14,21 @@ public class ApplicationErrorLog extends AbstractApplicationLog {
         
         for(int i=0; i<listeners.size(); i++)
         {
-            listeners.get(i).newMessage("String level", message);
+            listeners.get(i).newMessage(message);
         }
 
 	}
 
-	public IApplicationLogListener[] getpplicationLogListeners() {
-        return listeners;
-    }
+	void setMessage(String level, String message) {
+		for (IApplicationLogListener listener_i : listeners) {
+			listener_i.newMessage(message);
+		}
+	}
 
-	void setMessage() {
-		newMessage( level, message );
+	@Override
+	public IApplicationLogListener[] getpplicationLogListeners() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

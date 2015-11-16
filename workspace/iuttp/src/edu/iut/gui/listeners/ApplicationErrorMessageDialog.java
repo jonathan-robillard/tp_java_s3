@@ -6,7 +6,7 @@ public class ApplicationErrorMessageDialog extends
 		AbstractApplicationMessageDialog {
 
 	@Override
-	protected void showMessage(String level, String message) {
+	protected void showMessage() {
 		System.err.println("Erreur lors de l'affichage du message");
 	}
 

@@ -6,7 +6,7 @@ public class ApplicationInfoMessageDialog extends
 		AbstractApplicationMessageDialog {
 
 	@Override
-	protected void showMessage(String level, String message) {
+	protected void showMessage() {
 		System.out.println("message");
 	}
 }
