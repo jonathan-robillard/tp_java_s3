@@ -41,3 +41,10 @@ local.properties
 # STS (Spring Tool Suite)
 .springBeans
 
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+.nb-gradle/
