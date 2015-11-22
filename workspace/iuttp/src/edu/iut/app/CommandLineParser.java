@@ -6,7 +6,7 @@ import java.io.File;
 
 public class CommandLineParser {
 	
-	protected HashMap<String, CommandLineOption /* EX1: option generique */> options;
+	protected HashMap<String, CommandLineOption<?> /* EX1: option generique */> options;
 	protected ArrayList<String> parseErrors;
 		
 	public CommandLineParser() {
@@ -35,6 +35,36 @@ public class CommandLineParser {
 						}
 						break;
 					/* EX1 : reproduire le comportement de 'case FILE', pour STRING,INTEGER, ... */
+					case STRING:
+						CommandLineOption<String> StringOption = (CommandLineOption<String>)options.get(keyValue[0]);
+						if (keyValue.length == 2) {
+							StringOption.setValue(new String(keyValue[1]));
+						}
+						else {
+							parseErrors.add("Option should have a key and a value.");
+						}
+						break;
+					
+					case INTEGER:
+						CommandLineOption<Integer> IntOption = (CommandLineOption<Integer>)options.get(keyValue[0]);
+						if (keyValue.length == 2) {
+							IntOption.setValue(new Integer(keyValue[1]));
+						}
+						else {
+							parseErrors.add("Option should have a key and a value.");
+						}
+						break;
+					
+					case DOUBLE:
+						CommandLineOption<Double> DoubleOption = (CommandLineOption<Double>)options.get(keyValue[0]);
+						if (keyValue.length == 2) {
+							DoubleOption.setValue(new Double(keyValue[1]));
+						}
+						else {
+							parseErrors.add("Option should have a key and a value.");
+						}
+						break;
+						
 
 					default:
 						parseErrors.add("Unrecognize option type.");						
