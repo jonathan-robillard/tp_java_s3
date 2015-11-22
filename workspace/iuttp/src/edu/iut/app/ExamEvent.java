@@ -22,5 +22,25 @@ public class ExamEvent {
 	protected ArrayList<Person> jury;
 	protected Classroom classroom;
 	protected ArrayList<Document> documents;
+	
+	public Date getDate(){
+		return examDate;
+	}
+	
+	public Person getStudent(){
+		return student;
+	}
+	
+	public ArrayList<Person> getJury(){
+		return jury;
+	}
+	
+	public Classroom getClassRoom(){
+		return classroom;
+	}
+	
+	public ArrayList<Document> getDocuments(){
+		return documents;
+	}
 	 
 }
