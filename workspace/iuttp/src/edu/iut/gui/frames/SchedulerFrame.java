@@ -54,7 +54,7 @@ public class SchedulerFrame extends JFrame {
 		JMenuItem miLoad;
                 JMenuItem miSave;
                 JMenuItem miQuit;
-                JMenuItem miView;
+                JMenu mView;
                 JMenuItem miDisplay;
                 JMenuItem miAbout;
                 JMenuItem miMonth;
@@ -95,9 +95,9 @@ public class SchedulerFrame extends JFrame {
                 miQuit.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuFile.add(miQuit);
                 
-                miView = new JMenu("View");
-                miView.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
-                menuEdit.add(miView);
+                mView = new JMenu("View");
+                mView.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
+                menuEdit.add(mView);
                 
                 miAbout = new JMenuItem("About", KeyEvent.VK_T);
                 miAbout.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
@@ -108,17 +108,17 @@ public class SchedulerFrame extends JFrame {
                 miMonth = new JMenuItem("Month", KeyEvent.VK_T);
                 miMonth.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miMonth.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                miView.add(miMonth);
+                mView.add(miMonth);
                 
                 miWeek = new JMenuItem("Week", KeyEvent.VK_T);
                 miWeek.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miWeek.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                miView.add(miWeek);
+                mView.add(miWeek);
                 
                 miDay = new JMenuItem("Day", KeyEvent.VK_T);
                 miDay.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miDay.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                miView.add(miDay);
+                mView.add(miDay);
                 
                 
                 // contentPane.add(menuBar);
