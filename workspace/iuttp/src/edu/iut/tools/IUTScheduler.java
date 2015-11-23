@@ -6,11 +6,21 @@ import edu.iut.app.CommandLineOption;
 import edu.iut.app.CommandLineParser;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 // Test
 
 public class IUTScheduler {
 	public static void main(String[] args) {
+            
+            
+            // Antialiasing
+        System.setProperty("awt.useSystemAAFontSettings","on");
+        System.setProperty("swing.aatext", "true");
+            
+            
+            
 		Locale.setDefault(Locale.FRANCE);
 		CommandLineParser commandLineParser = new CommandLineParser();
 		CommandLineOption<java.io.File> configOption = new CommandLineOption<java.io.File>(CommandLineOption.OptionType.FILE, "config","configuration file",new java.io.File("/tmp"));

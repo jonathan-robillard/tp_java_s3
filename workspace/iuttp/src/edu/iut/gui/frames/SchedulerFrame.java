@@ -79,7 +79,7 @@ public class SchedulerFrame extends JFrame {
                 menuBar.add(menuEdit);
                 menuBar.add(menuHelp);
                 
-                
+                // Menu...
                 miLoad = new JMenuItem("Load", KeyEvent.VK_T);
                 miLoad.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miLoad.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
@@ -95,9 +95,8 @@ public class SchedulerFrame extends JFrame {
                 miQuit.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuFile.add(miQuit);
                 
-                miView = new JMenuItem("View", KeyEvent.VK_T);
-                miView.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miView.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
+                miView = new JMenu("View");
+                miView.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
                 menuEdit.add(miView);
                 
                 miAbout = new JMenuItem("About", KeyEvent.VK_T);
@@ -105,6 +104,7 @@ public class SchedulerFrame extends JFrame {
                 miAbout.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuHelp.add(miAbout);
                 
+                // Sous-menu...
                 miMonth = new JMenuItem("Month", KeyEvent.VK_T);
                 miMonth.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miMonth.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
