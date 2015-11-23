@@ -48,3 +48,4 @@ dist/
 nbdist/
 nbactions.xml
 .nb-gradle/
+/workspace/iuttp2/nbproject/private/
