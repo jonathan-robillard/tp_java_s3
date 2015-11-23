@@ -57,6 +57,9 @@ public class SchedulerFrame extends JFrame {
                 JMenuItem miView;
                 JMenuItem miDisplay;
                 JMenuItem miAbout;
+                JMenuItem miMonth;
+                JMenuItem miWeek;
+                JMenuItem miDay;
 		
 		/* File Menu */
 		/** EX4 : MENU : UTILISER L'AIDE FOURNIE DANS LE TP**/
@@ -101,6 +104,21 @@ public class SchedulerFrame extends JFrame {
                 miAbout.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miAbout.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuHelp.add(miAbout);
+                
+                miMonth = new JMenuItem("Month", KeyEvent.VK_T);
+                miMonth.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+                miMonth.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
+                miView.add(miMonth);
+                
+                miWeek = new JMenuItem("Week", KeyEvent.VK_T);
+                miWeek.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+                miWeek.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
+                miView.add(miWeek);
+                
+                miDay = new JMenuItem("Day", KeyEvent.VK_T);
+                miDay.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+                miDay.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
+                miView.add(miDay);
                 
                 
                 // contentPane.add(menuBar);
