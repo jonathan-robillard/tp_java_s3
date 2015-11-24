@@ -31,23 +31,42 @@ public class ControlAgendaViewPanel extends JPanel {
 		this.agendaViewLayout = layerLayout;
 		this.contentPane = contentPane;
 		/** EX3: REMPLACEMENT DU BOUTON NEXT */
-                String[] year = null;
+                
+                // Spinner Années
+                String[] year = {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
+                
+                
+                /* A REGARDER !!! */
+                /*for( int i=0 ; i<10 ; i++) {
+                    System.out.print("Salut");
+                    year[i] = Integer.toString(2010 + i);
+                    System.out.println(" Monsieur");
+                    
+                }*/
+                
+                SpinnerModel listModel = new SpinnerListModel(year);
+                JSpinner spinner = new JSpinner(listModel);
+                this.add(spinner);
+                
+                
+                
+                /*String[] year = null;
                 for( int i=0 ; i<10 ; i++) {
                     int y = 2010 + i;
-                    year[i] = toString(y);
+                    year[i] = Integer.toString(y);
                 }
-                SpinnerListModel monthModel = new SpinnerListModel(monthStrings);
-                JSpinner spinner = new JSpinner(monthModel);
+                SpinnerListModel yearModel = new SpinnerListModel(year);
+                JSpinner spinner = new JSpinner(yearModel);*/
                 
                 //Spinner nextView = new JButton("Next");
-		nextView.addActionListener(new ActionListener() {
+		/*spinner.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				agendaViewLayout.next(contentPane);				
 			}			
-		});
-		this.add(nextView);
+		});*/
+		
                 
 	}
 	
