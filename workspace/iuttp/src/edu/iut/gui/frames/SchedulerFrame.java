@@ -15,7 +15,9 @@ import javax.swing.JSplitPane;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 
@@ -78,17 +80,17 @@ public class SchedulerFrame extends JFrame {
                 menuBar.add(menuHelp);
                 
                 // Menu...
-                miLoad = new JMenuItem("Load", KeyEvent.VK_T);
+                miLoad = new JMenuItem("Load");
                 miLoad.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miLoad.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuFile.add(miLoad);
                 
-                miSave = new JMenuItem("Save", KeyEvent.VK_T);
+                miSave = new JMenuItem("Save");
                 miSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miSave.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuFile.add(miSave);
                 
-                miQuit = new JMenuItem("Quit", KeyEvent.VK_T);
+                miQuit = new JMenuItem("Quit");
                 miQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miQuit.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuFile.add(miQuit);
@@ -97,23 +99,23 @@ public class SchedulerFrame extends JFrame {
                 mView.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
                 menuEdit.add(mView);
                 
-                miAbout = new JMenuItem("About", KeyEvent.VK_T);
+                miAbout = new JMenuItem("About");
                 miAbout.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miAbout.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 menuHelp.add(miAbout);
                 
                 // Sous-menu...
-                miMonth = new JMenuItem("Month", KeyEvent.VK_T);
+                miMonth = new JMenuItem("Month");
                 miMonth.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miMonth.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 mView.add(miMonth);
                 
-                miWeek = new JMenuItem("Week", KeyEvent.VK_T);
+                miWeek = new JMenuItem("Week");
                 miWeek.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miWeek.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 mView.add(miWeek);
                 
-                miDay = new JMenuItem("Day", KeyEvent.VK_T);
+                miDay = new JMenuItem("Day");
                 miDay.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
                 miDay.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
                 mView.add(miDay);
@@ -124,6 +126,39 @@ public class SchedulerFrame extends JFrame {
 		this.setJMenuBar(menuBar);
 		this.pack();
 		layerLayout.next(contentPane);
+                
+                miLoad.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        JOptionPane j;
+                        j = new JOptionPane();
+                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                });
+                
+                miSave.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        JOptionPane j;
+                        j = new JOptionPane();
+                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                });
+                
+                miQuit.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        JOptionPane j;
+                        j = new JOptionPane();
+                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                });
+                
+                miAbout.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        JOptionPane j;
+                        j = new JOptionPane();
+                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                });
+                
 	}
 	
 	public SchedulerFrame() {
