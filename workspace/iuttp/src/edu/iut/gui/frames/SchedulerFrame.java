@@ -55,7 +55,6 @@ public class SchedulerFrame extends JFrame {
                 JMenuItem miSave;
                 JMenuItem miQuit;
                 JMenu mView;
-                JMenuItem miDisplay;
                 JMenuItem miAbout;
                 JMenuItem miMonth;
                 JMenuItem miWeek;
@@ -127,35 +126,30 @@ public class SchedulerFrame extends JFrame {
 		this.pack();
 		layerLayout.next(contentPane);
                 
-                miLoad.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
-                        JOptionPane j;
-                        j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                    }
+                miLoad.addActionListener((ActionEvent event) -> {
+                    JOptionPane j;
+                    j = new JOptionPane();
+                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                 });
                 
-                miSave.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
-                        JOptionPane j;
-                        j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                    }
+                miSave.addActionListener((ActionEvent event) -> {
+                    JOptionPane j;
+                    j = new JOptionPane();
+                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                 });
                 
-                miQuit.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
-                        JOptionPane j;
-                        j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                    }
+                miQuit.addActionListener((ActionEvent event) -> {
+                    JOptionPane j;
+                    j = new JOptionPane();
+                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                 });
                 
-                miAbout.addActionListener(new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
+                miAbout.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent event) {
                         JOptionPane j;
                         j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
                 
