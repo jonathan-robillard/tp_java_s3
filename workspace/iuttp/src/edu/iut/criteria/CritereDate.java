@@ -8,8 +8,14 @@ import java.util.List;
 
 public class CritereDate implements Criteria {
 
+	Date date;
 	
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent, Date date) {
+	public CritereDate(Date date){
+		this.date = date;
+	}
+	
+	@Override
+	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
 		List<ExamEvent> dateEvents = new ArrayList<ExamEvent>();
 		
 		for (ExamEvent event : examEvent) {
@@ -17,13 +23,6 @@ public class CritereDate implements Criteria {
 	        	 dateEvents.add(event);
 	         }
 	      }
-		
 		return dateEvents;
-	}
-
-	@Override
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
