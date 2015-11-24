@@ -7,8 +7,14 @@ import edu.iut.app.Person;
 
 public class CriterePersonne implements Criteria {
 
+	Person person;
 	
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent, Person person) {
+	public CriterePersonne(Person person){
+		this.person = person;
+	}
+	
+	@Override
+	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
 		List<ExamEvent> personEvent = new ArrayList<ExamEvent>();
 		
 		for (ExamEvent event : examEvent) {
@@ -18,11 +24,5 @@ public class CriterePersonne implements Criteria {
 	      }
 		
 		return personEvent;
-	}
-
-	@Override
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

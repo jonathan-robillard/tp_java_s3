@@ -9,8 +9,14 @@ import edu.iut.app.ExamEvent;
 
 public class CritereSalle implements Criteria {
 
+	Classroom classroom;
 	
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent, Classroom classroom) {
+	public CritereSalle(Classroom classroom){
+		this.classroom = classroom;
+	}
+
+	@Override
+	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
 		List<ExamEvent> classRoomEvents = new ArrayList<ExamEvent>();
 		
 		for (ExamEvent event : examEvent) {
@@ -20,11 +26,5 @@ public class CritereSalle implements Criteria {
 	      }
 		
 		return classRoomEvents;
-	}
-
-	@Override
-	public List<ExamEvent> meetCriteria(List<ExamEvent> examEvent) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
