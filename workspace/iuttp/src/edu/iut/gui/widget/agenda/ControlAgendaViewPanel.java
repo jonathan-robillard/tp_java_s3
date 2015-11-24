@@ -33,17 +33,13 @@ public class ControlAgendaViewPanel extends JPanel {
 		/** EX3: REMPLACEMENT DU BOUTON NEXT */
                 
                 // Spinner Années
-                String[] year = {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
-                
-                
+                String[] year = 
+                    { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
+                    // null;
                 /* A REGARDER !!! */
                 /*for( int i=0 ; i<10 ; i++) {
-                    System.out.print("Salut");
                     year[i] = Integer.toString(2010 + i);
-                    System.out.println(" Monsieur");
-                    
                 }*/
-                
                 SpinnerModel listModel = new SpinnerListModel(year);
                 JSpinner spinner = new JSpinner(listModel);
                 this.add(spinner);
