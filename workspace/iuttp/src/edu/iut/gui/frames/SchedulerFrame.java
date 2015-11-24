@@ -131,7 +131,7 @@ public class SchedulerFrame extends JFrame {
                     public void actionPerformed(ActionEvent event){
                         JOptionPane j;
                         j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
                 
@@ -139,7 +139,7 @@ public class SchedulerFrame extends JFrame {
                     public void actionPerformed(ActionEvent event){
                         JOptionPane j;
                         j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
                 
@@ -147,7 +147,7 @@ public class SchedulerFrame extends JFrame {
                     public void actionPerformed(ActionEvent event){
                         JOptionPane j;
                         j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
                 
@@ -155,7 +155,7 @@ public class SchedulerFrame extends JFrame {
                     public void actionPerformed(ActionEvent event){
                         JOptionPane j;
                         j = new JOptionPane();
-                        j.showMessageDialog(null, "Fonction non-implémentées !", "Information", JOptionPane.INFORMATION_MESSAGE);
+                        j.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
                 
