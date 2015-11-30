@@ -2,6 +2,7 @@ package edu.iut.gui.frames;
 
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -9,16 +10,15 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+
+import edu.iut.gui.listeners.*;
 
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
-import javax.swing.KeyStroke;
 
 
 public class SchedulerFrame extends JFrame {
@@ -48,111 +48,93 @@ public class SchedulerFrame extends JFrame {
 		this.setContentPane(splitPane);
 		
 		JMenuBar menuBar = new JMenuBar();
-		JMenu menuFile;
-                JMenu menuEdit;
-                JMenu menuHelp;
-		JMenuItem miLoad;
-                JMenuItem miSave;
-                JMenuItem miQuit;
-                JMenu mView;
-                JMenuItem miAbout;
-                JMenuItem miMonth;
-                JMenuItem miWeek;
-                JMenuItem miDay;
+		JMenu menu;		
+		JMenuItem menuItem;
 		
 		/* File Menu */
-		/** EX4 : MENU : UTILISER L'AIDE FOURNIE DANS LE TP**/
+		menu = new JMenu("File");
 		
-		menuFile = new JMenu("File");
-                menuEdit = new JMenu("Edit");
-                menuHelp = new JMenu("Help");
-		menuBar.add(menuFile);
-                menuBar.add(menuEdit);
-                menuBar.add(menuHelp);
-                
-                
-                
-                menuFile.setMnemonic(KeyEvent.VK_A);
-                menuFile.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
-                menuBar.add(menuFile);
-                menuBar.add(menuEdit);
-                menuBar.add(menuHelp);
-                
-                // Menu...
-                miLoad = new JMenuItem("Load");
-                miLoad.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miLoad.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                menuFile.add(miLoad);
-                
-                miSave = new JMenuItem("Save");
-                miSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miSave.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                menuFile.add(miSave);
-                
-                miQuit = new JMenuItem("Quit");
-                miQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miQuit.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                menuFile.add(miQuit);
-                
-                mView = new JMenu("View");
-                mView.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
-                menuEdit.add(mView);
-                
-                miAbout = new JMenuItem("About");
-                miAbout.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miAbout.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                menuHelp.add(miAbout);
-                
-                // Sous-menu...
-                miMonth = new JMenuItem("Month");
-                miMonth.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miMonth.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                mView.add(miMonth);
-                
-                miWeek = new JMenuItem("Week");
-                miWeek.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miWeek.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                mView.add(miWeek);
-                
-                miDay = new JMenuItem("Day");
-                miDay.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-                miDay.getAccessibleContext().setAccessibleDescription("This doesn't really do anything");
-                mView.add(miDay);
-                
-                
-                // contentPane.add(menuBar);
+		menuItem = new JMenuItem("Load");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
 		
+		menuItem = new JMenuItem("Save");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		
+		menuItem = new JMenuItem("Quit");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);		
+		menuBar.add(menu);
+		
+		/* Edit Menu */
+		menu = new JMenu("Edit");
+		JMenu submenu = new JMenu("View");
+		menuItem = new JMenuItem("Day");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.DAY_VIEW.name());	
+			}			
+		});		
+		submenu.add(menuItem);
+		menuItem = new JMenuItem("Week");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.WEEK_VIEW.name());		
+			}			
+		});		
+		submenu.add(menuItem);
+		menuItem = new JMenuItem("Month");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.MONTH_VIEW.name());		
+			}			
+		});		
+		submenu.add(menuItem);
+		menu.add(submenu);
+		menuBar.add(menu);
+		
+		/* Help Menu */
+		menu = new JMenu("Help");
+		menuItem = new JMenuItem("Display");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// EX 4 : ajouter l'aide
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		menuItem = new JMenuItem("About");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		menuBar.add(menu);
 		this.setJMenuBar(menuBar);
 		this.pack();
 		layerLayout.next(contentPane);
-                
-                miLoad.addActionListener((ActionEvent event) -> {
-                    JOptionPane j;
-                    j = new JOptionPane();
-                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                });
-                
-                miSave.addActionListener((ActionEvent event) -> {
-                    JOptionPane j;
-                    j = new JOptionPane();
-                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                });
-                
-                miQuit.addActionListener((ActionEvent event) -> {
-                    JOptionPane j;
-                    j = new JOptionPane();
-                    JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                });
-                
-                miAbout.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent event) {
-                        JOptionPane j;
-                        j = new JOptionPane();
-                        JOptionPane.showMessageDialog(null, "Fonction non-implémentée !", "Information", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                });
-                
 	}
 	
 	public SchedulerFrame() {
@@ -171,6 +153,8 @@ public class SchedulerFrame extends JFrame {
 		setupUI();
 
 	}
+
+	
 	public SchedulerFrame(String title) {
 		super(title);
 		addWindowListener (new WindowAdapter(){

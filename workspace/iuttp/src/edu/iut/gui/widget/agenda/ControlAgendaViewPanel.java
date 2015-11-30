@@ -15,7 +15,6 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SpinnerModel;
 
 import edu.iut.app.ApplicationSession;
-import javax.swing.SpinnerListModel;
 
 public class ControlAgendaViewPanel extends JPanel {
 
@@ -30,40 +29,30 @@ public class ControlAgendaViewPanel extends JPanel {
 
 		this.agendaViewLayout = layerLayout;
 		this.contentPane = contentPane;
-		/** EX3: REMPLACEMENT DU BOUTON NEXT */
-                
-                // Spinner Années
-                String[] year = 
-                    { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" };
-                    // null;
-                /* A REGARDER !!! */
-                /*for( int i=0 ; i<10 ; i++) {
-                    year[i] = Integer.toString(2010 + i);
-                }*/
-                SpinnerModel listModel = new SpinnerListModel(year);
-                JSpinner spinner = new JSpinner(listModel);
-                this.add(spinner);
-                
-                
-                
-                /*String[] year = null;
-                for( int i=0 ; i<10 ; i++) {
-                    int y = 2010 + i;
-                    year[i] = Integer.toString(y);
-                }
-                SpinnerListModel yearModel = new SpinnerListModel(year);
-                JSpinner spinner = new JSpinner(yearModel);*/
-                
-                //Spinner nextView = new JButton("Next");
-		/*spinner.addActionListener(new ActionListener() {
+		JPanel commandPanel = new JPanel();
+		JPanel bottom = new JPanel();
+		commandPanel.setLayout(new BoxLayout(commandPanel, BoxLayout.PAGE_AXIS));
+		Calendar calendar = Calendar.getInstance();
+        SpinnerNumberModel dateModel = new SpinnerNumberModel(calendar.get(Calendar.YEAR),
+        												calendar.get(Calendar.YEAR)-5,
+        												calendar.get(Calendar.YEAR)+5,
+        												1);
+        JSpinner  yearsSpinner       = new JSpinner(dateModel);
+        yearsSpinner.setEditor(new JSpinner.NumberEditor(yearsSpinner, "#"));
+		JComboBox monthComboBox      = new JComboBox(ApplicationSession.instance().getMonths());
+		JComboBox daysOfWeekComboBox = new JComboBox(ApplicationSession.instance().getDays());
+		/*nextView.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				agendaViewLayout.next(contentPane);				
 			}			
 		});*/
-		
-                
+		commandPanel.add(yearsSpinner);
+		commandPanel.add(monthComboBox);
+		commandPanel.add(daysOfWeekComboBox);
+		this.add(commandPanel, BorderLayout.CENTER);
+        this.add(bottom, BorderLayout.PAGE_END);
 	}
 	
 	public int getYear() {
