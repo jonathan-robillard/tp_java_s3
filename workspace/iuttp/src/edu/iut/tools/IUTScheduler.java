@@ -1,5 +1,6 @@
 package edu.iut.tools;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -17,7 +18,7 @@ import javax.xml.transform.TransformerException;
 
 
 public class IUTScheduler {
-	public static void main(String[] args) throws ParserConfigurationException, TransformerException {
+	public static void main(String[] args) throws ParserConfigurationException, TransformerException, FileNotFoundException {
 		Locale.setDefault(Locale.FRANCE);
 		
 		
@@ -52,12 +53,13 @@ public class IUTScheduler {
 		});
 		
 		Date date = new Date(1900, 12, 23);
-		ArrayList agenda = new ArrayList<ExamEvent>();
+		Agenda agenda = new Agenda();
 		ExamEvent e1 = new ExamEvent(date, null, null,null, null );
 		ExamEvent e2 = new ExamEvent(date, null, null,null, null );
 		ExamEvent e3 = new ExamEvent(date, null, null,null, null );
 		ExamEvent e4 = new ExamEvent(date, null, null,null, null );
 		ExamEvent e5 = new ExamEvent(date, null, null,null, null );
+		
 		
 		agenda.add(e1);
 		agenda.add(e2);
