@@ -19,6 +19,12 @@ import edu.iut.gui.listeners.*;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+import java.awt.Desktop;
+import static java.awt.SystemColor.desktop;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class SchedulerFrame extends JFrame {
@@ -127,7 +133,13 @@ public class SchedulerFrame extends JFrame {
 		menuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+				/*JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);*/
+                                Desktop desktop = Desktop.getDesktop();
+                            try {
+                                desktop.open(new File("index.html"));
+                            } catch (IOException ex) {
+                                Logger.getLogger(SchedulerFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 			}			
 		});
 		menu.add(menuItem);
