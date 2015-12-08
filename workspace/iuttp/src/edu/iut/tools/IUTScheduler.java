@@ -1,6 +1,7 @@
 package edu.iut.tools;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -12,6 +13,7 @@ import edu.iut.app.CommandLineParser;
 import edu.iut.app.Document;
 import edu.iut.app.ExamEvent;
 import edu.iut.app.Person;
+import edu.iut.io.XMLProjectReader;
 import edu.iut.io.XMLProjectWriter;
 
 import javax.swing.JFrame;
@@ -21,7 +23,7 @@ import javax.xml.transform.TransformerException;
 
 
 public class IUTScheduler {
-	public static void main(String[] args) throws ParserConfigurationException, TransformerException, FileNotFoundException {
+	public static void main(String[] args) throws ParserConfigurationException, TransformerException, IOException {
 		Locale.setDefault(Locale.FRANCE);
 		
 		
@@ -84,8 +86,10 @@ public class IUTScheduler {
 		agenda.add(e5);
 		
 		XMLProjectWriter writer = new XMLProjectWriter();
+		XMLProjectReader reader = new XMLProjectReader();
 		
 		writer.save(agenda, "m.xml");
+		reader.load("m.xml");
 	}
 	
 }

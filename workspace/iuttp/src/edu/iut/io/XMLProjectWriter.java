@@ -19,11 +19,13 @@ public class XMLProjectWriter {
 		XMLEncoder encoder = new XMLEncoder(new FileOutputStream(xmlfile));
 		try {
             // serialisation de l'objet
-			for(ExamEvent e : data)
+			/*for(ExamEvent e : data)
 			{
 				encoder.writeObject(e);
 	            encoder.flush();
-			}
+			}*/
+			encoder.writeObject(data);
+            encoder.flush();
 			
         } finally {
             // fermeture de l'encodeur
