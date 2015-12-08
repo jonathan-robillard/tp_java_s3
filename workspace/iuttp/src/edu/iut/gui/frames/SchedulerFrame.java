@@ -21,6 +21,7 @@ import edu.iut.gui.listeners.*;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+import edu.iut.io.XMLProjectReader;
 import edu.iut.io.XMLProjectWriter;
 import java.awt.Desktop;
 import static java.awt.SystemColor.desktop;
@@ -69,7 +70,9 @@ public class SchedulerFrame extends JFrame {
 		menuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+                            XMLProjectReader x = new XMLProjectReader();
+                            x.load("m.xml");
+				//JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
 			}			
 		});
 		menu.add(menuItem);
