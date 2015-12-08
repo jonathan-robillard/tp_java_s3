@@ -89,7 +89,16 @@ public class IUTScheduler {
 		XMLProjectReader reader = new XMLProjectReader();
 		
 		writer.save(agenda, "m.xml");
-		reader.load("m.xml");
+		Agenda a2 = reader.load("m.xml");
+		
+		for(ExamEvent e : a2)
+		{
+			System.out.println(e.getDate());
+			System.out.println(e.getStudent().getFirstname());
+			System.out.println();
+		}
+		
+		
 	}
 	
 }
