@@ -15,8 +15,8 @@ public class XMLProjectWriter {
 	public XMLProjectWriter() {		
 	}
 	
-	public void save(Agenda data/*, java.io.File xmlfile*/) throws FileNotFoundException{
-		XMLEncoder encoder = new XMLEncoder(new FileOutputStream("toto.xml"));
+	public void save(Agenda data, String xmlfile) throws FileNotFoundException{
+		XMLEncoder encoder = new XMLEncoder(new FileOutputStream(xmlfile));
 		try {
             // serialisation de l'objet
 			for(ExamEvent e : data)

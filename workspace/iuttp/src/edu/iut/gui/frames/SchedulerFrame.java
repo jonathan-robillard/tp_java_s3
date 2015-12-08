@@ -1,5 +1,7 @@
 package edu.iut.gui.frames;
 
+import edu.iut.app.Agenda;
+import edu.iut.app.ExamEvent;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,10 +21,13 @@ import edu.iut.gui.listeners.*;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+import edu.iut.io.XMLProjectWriter;
 import java.awt.Desktop;
 import static java.awt.SystemColor.desktop;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,7 +78,27 @@ public class SchedulerFrame extends JFrame {
 		menuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+                            try {
+                                Date date = new Date(1900, 12, 23);
+                                Agenda agenda = new Agenda();
+                                ExamEvent e1 = new ExamEvent(date, null, null,null, null );
+                                ExamEvent e2 = new ExamEvent(date, null, null,null, null );
+                                ExamEvent e3 = new ExamEvent(date, null, null,null, null );
+                                ExamEvent e4 = new ExamEvent(date, null, null,null, null );
+                                ExamEvent e5 = new ExamEvent(date, null, null,null, null );
+                                
+                                
+                                agenda.add(e1);
+                                agenda.add(e2);
+                                agenda.add(e3);
+                                agenda.add(e4);
+                                agenda.add(e5);
+                                XMLProjectWriter xpw = new XMLProjectWriter();	
+                                
+                                xpw.save(agenda, "save.xml");
+                            } catch (FileNotFoundException ex) {
+                                Logger.getLogger(SchedulerFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 			}			
 		});
 		menu.add(menuItem);

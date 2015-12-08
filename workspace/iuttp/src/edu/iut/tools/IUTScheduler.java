@@ -69,7 +69,7 @@ public class IUTScheduler {
 		
 		XMLProjectWriter writer = new XMLProjectWriter();
 		
-		writer.save(agenda);
+		writer.save(agenda, "m.xml");
 	}
 	
 }
