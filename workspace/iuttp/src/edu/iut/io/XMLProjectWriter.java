@@ -21,7 +21,7 @@ public class XMLProjectWriter {
             // serialisation de l'objet
 			for(ExamEvent e : data)
 			{
-				encoder.writeObject(e.getDate());
+				encoder.writeObject(e);
 	            encoder.flush();
 			}
 			
