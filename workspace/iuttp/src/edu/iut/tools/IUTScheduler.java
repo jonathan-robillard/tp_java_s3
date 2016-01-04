@@ -41,7 +41,54 @@ public class IUTScheduler {
 		        JFrame mainFrame = new edu.iut.gui.frames.SchedulerFrame("IUT Scheduler");
 		        mainFrame.setVisible(true);		        
 		    }
+<<<<<<< HEAD
 		});
+=======
+		});*/
+		
+		Date date = new Date(1900, 12, 23);
+		Agenda agenda = new Agenda();
+		Person p1 = new Person(Person.PersonFunction.STUDENT, "Jean", "Jacques", "jean@hotmail.fr", "0633333333");
+		Person p2 = new Person(Person.PersonFunction.STUDENT, "Jeanne", "Jacques", "jean@hotmail.fr", "0633333333");
+		Person p3 = new Person(Person.PersonFunction.JURY, "Pierre", "Jacques", "jean@hotmail.fr", "0633333333");
+		Person p4 = new Person(Person.PersonFunction.JURY, "Henry", "Jacques", "jean@hotmail.fr", "0633333333");
+		
+		ArrayList<Person> jury = new ArrayList<Person>();
+		jury.add(p3);
+		jury.add(p4);
+		Classroom classroom = new Classroom("1");
+		ArrayList<Document> documents = new ArrayList<Document>();
+		Document doc1 = new Document("document 1");
+		documents.add(doc1);
+		
+		ExamEvent e1 = new ExamEvent(date, p1, jury,classroom, documents );
+		ExamEvent e2 = new ExamEvent(date, p1, jury,classroom, documents );
+		ExamEvent e3 = new ExamEvent(date, p2, jury,classroom, documents );
+		ExamEvent e4 = new ExamEvent(date, p2, jury,classroom, documents );
+		ExamEvent e5 = new ExamEvent(date, p2, jury,classroom, documents );
+		
+		
+		agenda.add(e1);
+		agenda.add(e2);
+		agenda.add(e3);
+		agenda.add(e4);
+		agenda.add(e5);
+		
+		XMLProjectWriter writer = new XMLProjectWriter();
+		XMLProjectReader reader = new XMLProjectReader();
+		
+		writer.save(agenda, "m.xml");
+		Agenda a2 = reader.load("m.xml");
+		
+		for(ExamEvent e : a2)
+		{
+			System.out.println(e.getDate());
+			System.out.println(e.getStudent().getFirstname());
+			System.out.println();
+		}
+		
+		
+>>>>>>> origin/master
 	}
 	
 }
