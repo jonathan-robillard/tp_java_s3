@@ -41,12 +41,11 @@ public class IUTScheduler {
 		        JFrame mainFrame = new edu.iut.gui.frames.SchedulerFrame("IUT Scheduler");
 		        mainFrame.setVisible(true);		        
 		    }
-<<<<<<< HEAD
+
 		});
-=======
-		});*/
+
 		
-		Date date = new Date(1900, 12, 23);
+		/*Date date = new Date(1900, 12, 23);
 		Agenda agenda = new Agenda();
 		Person p1 = new Person(Person.PersonFunction.STUDENT, "Jean", "Jacques", "jean@hotmail.fr", "0633333333");
 		Person p2 = new Person(Person.PersonFunction.STUDENT, "Jeanne", "Jacques", "jean@hotmail.fr", "0633333333");
@@ -88,7 +87,6 @@ public class IUTScheduler {
 		}
 		
 		
->>>>>>> origin/master
-	}
+	*/}
 	
 }
