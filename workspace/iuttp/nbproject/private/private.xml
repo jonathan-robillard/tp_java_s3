@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Local/Projets/iut/tp_java_s3/workspace/iuttp/src/edu/iut/tools/IUTScheduler.java</file>
-            <file>file:/D:/Local/Projets/iut/tp_java_s3/workspace/iuttp/src/edu/iut/gui/frames/SchedulerFrame.java</file>
+            <file>file:/C:/projets/tp_java_s3/workspace/iuttp/src/edu/iut/io/XMLProjectWriter.java</file>
+            <file>file:/C:/projets/tp_java_s3/workspace/iuttp/src/edu/iut/gui/frames/SchedulerFrame.java</file>
+            <file>file:/C:/projets/tp_java_s3/workspace/iuttp/src/edu/iut/io/XMLProjectReader.java</file>
+            <file>file:/C:/projets/tp_java_s3/workspace/iuttp/src/edu/iut/tools/IUTScheduler.java</file>
+            <file>file:/C:/projets/tp_java_s3/workspace/iuttp/src/edu/iut/app/Agenda.java</file>
         </group>
     </open-files>
 </project-private>

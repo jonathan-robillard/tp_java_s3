@@ -9,11 +9,7 @@ public class ExamEvent {
 	
 	public ExamEvent(Date date, Person person, ArrayList<Person> jury,
 					Classroom classRoom, ArrayList<Document> document) {
-		examDate = date;
-		student = person;
-		this.jury = jury;
-		this.classroom = classRoom;
-		this.documents = document;
+		
 	}
 	
 	public void setDate(Date date) {
